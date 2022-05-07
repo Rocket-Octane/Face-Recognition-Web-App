@@ -1,0 +1,21 @@
+body{
+    background-color: gray;
+    color: black;
+}
+.people_name{
+    font-size: 18px;
+}
+label{
+    font-size: 20px;
+}
+.people_name, #result_person_name, #result_person_accuracy{
+    font-size: 20px;
+}
+#camera{
+    width: 350px;
+    height: 300px;
+    border: dashed black 7px;
+}
+button{
+    font-size: 18px;
+}
