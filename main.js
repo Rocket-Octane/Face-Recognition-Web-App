@@ -8,10 +8,12 @@ Webcam.set({
 camera = document.getElementById("camera");
 
 Webcam.attach('#camera');
+console.log("ready to take snapshot (webcam attached)");
 
 function take_snapshot(){
     Webcam.snap(function(data_uri){
-        document.getElementById("result").innerHTML = "<img id='captured_image' src"+data_uri+">";
+        console.log("taking snapshot");
+        document.getElementById("result").innerHTML = "<img id='captured_image' src="+data_uri+">";
     });
 }
 
@@ -34,8 +36,7 @@ function gotResult(error, results){
     }
     else{
         console.log(results);
-        document.getElementById("result_object_name").innerHTML = results[0].label;
-        var x = results[0].confidence.toFixed(4);
-        document.getElementById("result_accuracy_name").innerHTML = x * 100 + "%";
+        document.getElementById("result_person_name").innerHTML = results[0].label;
+        document.getElementById("result_person_accuracy").innerHTML = (results[0].confidence * 100).toFixed(2) + "%";
     }
 }
